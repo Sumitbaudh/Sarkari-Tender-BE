@@ -1,5 +1,6 @@
 import { Server } from "socket.io";
 import { Tender } from "../models/tender.model";
+import { Corrigendum } from "../models/corrigendum.model";
 
 export const setupWebSockets = (io: Server) => {
     console.log("🟢 WebSockets initialized");
@@ -7,7 +8,7 @@ export const setupWebSockets = (io: Server) => {
     io.on("connection", (socket) => {
         console.log("🟢 New WebSocket Connection");
 
-        const changeStream = Tender.watch();
+        const changeStream = Tender.watch() || Corrigendum.watch();
         changeStream.on("change", (change) => {
             console.log("⚡ Database Change Detected:", change);
             io.emit("db_update", change);
