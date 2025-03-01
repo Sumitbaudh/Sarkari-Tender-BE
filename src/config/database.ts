@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 
 dotenv.config();
-const mongoURI = process.env.MONGO_URI || "mongodb+srv://sumitbaudh2205:yUkHfLNv5DWsz6zy@sarakari-tender.neegz.mongodb.net/scrapper?retryWrites=true&w=majority&appName=sarakari-tender";
+const mongoURI = process.env.MONGO_URI || "";           
 
 export const connectDB = async () => {
     try {
