@@ -8,4 +8,4 @@ const CorrigendumsSchema = new mongoose.Schema({
     link : { type : String}
 }, { timestamps: true });
 
-export const Corrigendum = mongoose.model("corrigendum" ,CorrigendumsSchema );
+export const Corrigendum = mongoose.model("corrigendums" ,CorrigendumsSchema );
